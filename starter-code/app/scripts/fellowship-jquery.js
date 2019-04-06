@@ -29,6 +29,13 @@ $(document).ready(() => {
   let $frodo, $sam, $gollum, $gandalf, $strider, $boromir;
   let $theRing;
 
+  let $messageBox;
+
+  function updateMessageBox(message) {
+    $messageBox.text(message);
+    setTimeout(() => $messageBox.text(''), 2000);
+  }
+
   // Part 1
 
   function makeMiddleEarth() {
@@ -39,12 +46,29 @@ $(document).ready(() => {
     $(body).append('<section id="middle-earth" />');
     $middleEarth = $('#middle-earth');
     
-    lands.forEach(land => $middleEarth.append(`<article id="${land.replace(/\s+/g, '-').toLowerCase()}"><h1>${land}</h1></article>`));
+    lands.forEach(land => $middleEarth.append(`<article class="land" id="${land.replace(/\s+/g, '-').toLowerCase()}"><h1>${land}</h1></article>`));
     
     // update jQ selectors
     $theShire = $('#middle-earth > article:nth-child(1)');
     $rivendell = $('#middle-earth > article:nth-child(2)');
     $mordor = $('#middle-earth > article:nth-child(3)');
+
+    console.log($('article'));
+
+    $middleEarth.append('<div class="message-box" />');
+    $messageBox = $('.message-box');
+    $messageBox
+      .css({ 
+        'position': 'fixed', 
+        'border': '1px solid white', 
+        'border-radius': '5px', 
+        'width': '60%', 
+        'height': '30px', 
+        'top': '17px', 
+        'left': '76px',
+        'font-size': '20px',
+        'padding': '5px auto'
+      });
   }
   
   // Part 2
@@ -124,12 +148,12 @@ $(document).ready(() => {
 
     allHobbits.forEach(hobbit => {
       $theFellowship.append(hobbit);
-      console.log(`${hobbit.innerHTML} has joined the partay!`);
+      updateMessageBox(`${hobbit.innerHTML} has joined the partay!`);
     });
     
     allBuddies.forEach(buddy => {
       $theFellowship.append(buddy);
-      console.log(`${buddy.innerHTML} has joined the partay!`);
+      updateMessageBox(`${buddy.innerHTML} has joined the partay!`);
     });
   }
 
@@ -157,8 +181,8 @@ $(document).ready(() => {
     // Boromir's been killed by the Uruk-hai!
     // put a linethrough on boromir's name
     // Remove Boromir from the Fellowship
-    console.log('Someone done bloweth on the Horn of Gondor!');
-    console.log('Boromir, he dead.');
+    updateMessageBox('Someone done bloweth on the Horn of Gondor!');
+    updateMessageBox('Boromir, he dead.');
     $boromir.css({ 'text-decoration': 'line-through' });
     $boromir.remove();
   }
@@ -198,6 +222,7 @@ $(document).ready(() => {
     $gollum.remove();
     $rivendell.find('.buddy').remove();
     $theShire.append(allHobbits);
+    updateMessageBox('There and back again');
   }
 
   makeMiddleEarth();
@@ -206,12 +231,22 @@ $(document).ready(() => {
   makeBuddies();
   beautifulStranger();
   leaveTheShire();
-  forgeTheFellowShip()
-  theBalrog()
-  hornOfGondor()
-  itsDangerousToGoAlone()
-  weWantsIt()
-  thereAndBackAgain()
+  forgeTheFellowShip();
+  theBalrog();
+  // hornOfGondor();
+  // itsDangerousToGoAlone();
+  // weWantsIt();
+  // thereAndBackAgain();
 
-  console.log({ $theShire, $rivendell, $mordor });
+  // setTimeout(makeHobbits, 6000);
+  // setTimeout(keepItSecretKeepItSafe, 9000);
+  // setTimeout(makeBuddies, 12000);
+  // setTimeout(beautifulStranger, 15000);
+  // setTimeout(leaveTheShire, 18000);
+  // setTimeout(forgeTheFellowShip, 21000);
+  // setTimeout(theBalrog, 24000);
+  // setTimeout(hornOfGondor, 27000);
+  // setTimeout(itsDangerousToGoAlone, 30000);
+  // setTimeout(weWantsIt, 33000);
+  // setTimeout(thereAndBackAgain, 36000);
 });
