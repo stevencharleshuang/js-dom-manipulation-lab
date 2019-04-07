@@ -114,10 +114,55 @@ ul {
   width: inherit;
 }
 
+.fadeInLoad {
+  animation: fadeInLoad 2s;
+}
 
+@keyframes fadeInLoad {
+  from {
+      opacity:0;
+  }
+  to {
+      opacity:1;
+  }
+}
 
+.controls {
+  bottom: 0px;
+  z-index: 1000;
+  left: 0px;
+  position: fixed;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-end;
+}
 
+.controls-btn {
+  background: rgba(0,0,0,0.3);
+  border-radius: 5px;
+  width: 200px;
+  height: 50px;
+  color: white;
+  border: 1px solid black;
+}
 
+.controls-btn:hover {
+  background: rgba(0,0,0,0.6);
+  cursor: pointer;
+}
+
+.message-box {
+  position: fixed;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 60%;
+  height: 300px;
+  bottom: 0px;
+  right: 0px;
+  font-size: 20px;
+  padding: 5px auto;
+  text-align: center;
+}
 
 
 /*===========================================================*/

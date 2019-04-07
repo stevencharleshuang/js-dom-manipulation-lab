@@ -19,9 +19,7 @@ const buddies = [
 const lands = ['The Shire', 'Rivendell', 'Mordor'];
 const body = document.querySelector('body');
 
-
 // Part 1
-
 
 function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
@@ -41,10 +39,7 @@ function makeMiddleEarth() {
     middleEarth.appendChild(land);
     body.appendChild(middleEarth);
   });
-}
-
-makeMiddleEarth();
-
+} 
 
 // Part 2
 
@@ -69,8 +64,6 @@ function makeHobbits() {
   shire.appendChild(hobbitsList)
 }
 
-makeHobbits();
-
 // Part 3
 
 function keepItSecretKeepItSafe() {
@@ -88,7 +81,6 @@ function keepItSecretKeepItSafe() {
   frodo.appendChild(ring);
 }
 
-keepItSecretKeepItSafe();
 
 // Part 4
 
@@ -112,8 +104,6 @@ function makeBuddies() {
   });
 }
 
-makeBuddies();
-
 // Part 5
 
 function beautifulStranger() {
@@ -129,8 +119,6 @@ function beautifulStranger() {
   strider.innerHTML = 'Aragorn';
 }
 
-beautifulStranger();
-
 // Part 6
 
 function leaveTheShire() {
@@ -141,10 +129,7 @@ function leaveTheShire() {
   rivendell.appendChild(hobbitsList)
 }
 
-leaveTheShire();
-
 // Part 7
-
 
 function forgeTheFellowShip() {
   // create a new div called 'the-fellowship' within rivendell
@@ -173,10 +158,7 @@ function forgeTheFellowShip() {
   rivendell.append(theFellowship);
 }
 
-forgeTheFellowShip();
-
 // Part 8
-
 
 function theBalrog() {
   // change the 'Gandalf' textNode to 'Gandalf the White'
@@ -187,8 +169,6 @@ function theBalrog() {
   gandalf.innerHTML = 'Gandalf the White';
   gandalf.style.cssText = 'background: white; border: 2px solid grey; width: 50%; border-radius: 5px;';
 }
-
-theBalrog();
 
 // Part 9
 
@@ -204,7 +184,6 @@ function hornOfGondor() {
   party.removeChild(boromir);
 }
 
-hornOfGondor();
 
 // Part 10
 
@@ -229,8 +208,6 @@ function itsDangerousToGoAlone(){
   mordor.append(mountDoom);
 }
 
-itsDangerousToGoAlone();
-
 // Part 11
 
 function weWantsIt() {
@@ -250,8 +227,6 @@ function weWantsIt() {
   gollum.append(theRing)
   mountDoom.append(gollum)
 }
-
-weWantsIt();
 
 // Part 12
 
@@ -282,4 +257,15 @@ function thereAndBackAgain() {
   });
 }
 
+makeMiddleEarth();
+makeHobbits();
+keepItSecretKeepItSafe();
+makeBuddies();
+beautifulStranger();
+leaveTheShire();
+forgeTheFellowShip();
+theBalrog();
+hornOfGondor();
+itsDangerousToGoAlone();
+weWantsIt();
 thereAndBackAgain();
